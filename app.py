@@ -5,37 +5,107 @@ import streamlit as st
 
 st.markdown("""
 <style>
+/* Bendras fonas */
 .stApp {
-    background-image: url("https://raw.githubusercontent.com/Jurgitele1/sviesos-kelias/main/images/fonas.jpg");
+    background-image: url("https://raw.githubusercontent.com/JURGITELE1/sviesos-kelias/main/images/fonas.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-.block-container {
-    background-color: rgba(255, 255, 255, 0.86);
-    padding: 2rem;
-    border-radius: 22px;
+/* Pagrindinis baltas permatomas sluoksnis */
+.main .block-container {
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(4px);
+    border-radius: 26px;
+    padding: 2rem 2rem 3rem 2rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
+/* Antraštės */
 h1, h2, h3 {
     color: #2e7d32;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem !important;
+    margin-bottom: 0.2rem;
+}
+
+h2, h3 {
     text-align: center;
 }
 
-.stButton>button {
-    background: linear-gradient(90deg, #C7F464, #FDE68A);
-    color: black;
-    border-radius: 12px;
-    padding: 10px 18px;
-    border: none;
-    font-weight: 600;
+/* Pastraipos ir tekstas */
+html, body, [class*="css"] {
+    color: #1f2d1f;
 }
 
-.stButton>button:hover {
-    background: linear-gradient(90deg, #A8E63A, #FFD54F);
+/* Mygtukai */
+.stButton > button {
+    width: 100%;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(90deg, #c7f464, #fde68a);
+    color: #223322;
+    font-weight: 700;
+    padding: 0.7rem 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+.stButton > button:hover {
+    background: linear-gradient(90deg, #b6ea4e, #f8d95a);
+    color: #1d2b1d;
+}
+
+/* Input laukai */
+.stTextInput input,
+.stTextArea textarea {
+    border-radius: 16px !important;
+    border: 1px solid rgba(120, 170, 90, 0.35) !important;
+    background-color: rgba(255,255,255,0.92) !important;
+}
+
+/* Selectbox */
+div[data-baseweb="select"] > div {
+    border-radius: 16px !important;
+    background-color: rgba(255,255,255,0.92) !important;
+}
+
+/* Radio */
+.stRadio > div {
+    background: rgba(255,255,255,0.55);
+    border-radius: 16px;
+    padding: 0.6rem 1rem;
+}
+
+/* Info/success/warning blokai */
+div[data-testid="stAlert"] {
+    border-radius: 18px;
+}
+
+/* Horizontal line */
+hr {
+    border: none;
+    height: 1px;
+    background: rgba(46, 125, 50, 0.18);
+    margin-top: 1.4rem;
+    margin-bottom: 1.4rem;
+}
+
+/* Paveikslėliams švelnus rėmelis */
+img {
+    border-radius: 18px;
+}
+
+/* Maži caption */
+[data-testid="stCaptionContainer"] {
+    text-align: center;
+    color: #456045;
+    font-weight: 500;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -59,7 +129,11 @@ STEP_JUMP_MAP = {
     12: 10,
 }
 
-st.title("Šviesos kelias")
+st.markdown("<h1>🌱 Šviesos kelias</h1>", unsafe_allow_html=True)
+st.markdown(
+    "<p style='text-align:center; font-size:1.1rem; color:#486248; margin-top:-8px; margin-bottom:24px;'>Tavo vidinės krypties žaidimas ✨</p>",
+    unsafe_allow_html=True
+)
 
 # -------------------------
 # Patikrinimai
@@ -222,33 +296,60 @@ st.markdown(f"## {player_name}")
 # -------------------------
 # Vedlio panelė
 # -------------------------
-st.markdown("### 🧭 Vedlio panelė")
+st.markdown("""
+<div style="
+    background: linear-gradient(90deg, rgba(199,244,100,0.35), rgba(255,255,255,0.72));
+    border-radius: 22px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+">
+    <div style="font-size:1.2rem; font-weight:700; color:#2e7d32; margin-bottom:12px; text-align:center;">
+        🧭 Vedlio panelė
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.write(f"👤 Žaidėjas: {player_name}")
-    st.write(f"🎮 Režimas: {mode}")
+    st.markdown(f"""
+    <div style="background:rgba(255,255,255,0.72); padding:14px; border-radius:18px;">
+        <div><strong>👤 Žaidėjas:</strong> {player_name}</div>
+        <div style="margin-top:6px;"><strong>🎮 Režimas:</strong> {mode}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col2:
     if mode == "Pilna versija":
-        st.write(f"📍 Dabartinis žingsnis: {player['current_step']}")
+        position_text = f"Dabartinis žingsnis: {player['current_step']}"
     else:
-        st.write(f"📍 Pozicija: {player['position']} / 12")
-    st.write(f"🔢 Atsakymų kiekis: {len(player['visit_history'])}")
+        position_text = f"Pozicija: {player['position']} / 12"
+
+    st.markdown(f"""
+    <div style="background:rgba(255,255,255,0.72); padding:14px; border-radius:18px;">
+        <div><strong>📍 {position_text}</strong></div>
+        <div style="margin-top:6px;"><strong>🔢 Atsakymų kiekis:</strong> {len(player['visit_history'])}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col3:
     if not player["goal_saved"]:
-        st.write("🗺️ Būsena: pradžia")
+        status_text = "pradžia"
     elif player["goal_saved"] and len(player["visit_history"]) == 0:
-        st.write("🗺️ Būsena: pasiruošęs kelionei")
+        status_text = "pasiruošęs kelionei"
     elif player["group_finished"] or player["final_saved"]:
-        st.write("🗺️ Būsena: kelias baigtas")
+        status_text = "kelias baigtas"
     else:
-        st.write("🗺️ Būsena: procese")
+        status_text = "procese"
+
+    st.markdown(f"""
+    <div style="background:rgba(255,255,255,0.72); padding:14px; border-radius:18px;">
+        <div><strong>🗺️ Būsena:</strong> {status_text}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 st.markdown("---")
-
 # -------------------------
 # Bendra pradžia abiem režimams
 # -------------------------
