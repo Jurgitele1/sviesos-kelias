@@ -15,13 +15,13 @@ st.markdown("""
 
 /* Pagrindinis baltas permatomas sluoksnis */
 .main .block-container {
-    background: rgba(255, 255, 255, 0.84);
-    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(6px);
     border-radius: 26px;
     padding: 2rem 2rem 3rem 2rem;
     margin-top: 1rem;
     margin-bottom: 2rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
 }
 
 /* Antraštės */
