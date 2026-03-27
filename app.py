@@ -3,6 +3,42 @@ import random
 import pandas as pd
 import streamlit as st
 
+st.markdown("""
+<style>
+.stApp {
+    background-image: url("https://raw.githubusercontent.com/Jurgitele1/sviesos-kelias/main/images/fonas.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.block-container {
+    background-color: rgba(255, 255, 255, 0.86);
+    padding: 2rem;
+    border-radius: 22px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+h1, h2, h3 {
+    color: #2e7d32;
+    text-align: center;
+}
+
+.stButton>button {
+    background: linear-gradient(90deg, #C7F464, #FDE68A);
+    color: black;
+    border-radius: 12px;
+    padding: 10px 18px;
+    border: none;
+    font-weight: 600;
+}
+
+.stButton>button:hover {
+    background: linear-gradient(90deg, #A8E63A, #FFD54F);
+}
+</style>
+""", unsafe_allow_html=True)
 st.set_page_config(page_title="Šviesos kelias", page_icon="✨")
 
 CSV_FILE = "steps.csv"
