@@ -17,25 +17,26 @@ st.markdown("""
     background: transparent;
 }
 
-.main .block-container {
-    background: rgba(210, 240, 220, 0.93);
-    border-radius: 28px;
-    padding: 2rem 2rem 3rem 2rem;
+[data-testid="stMainBlockContainer"] {
+    max-width: 1050px;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
-    max-width: 1050px;
+    padding: 2rem 2rem 3rem 2rem;
+    border-radius: 28px;
+    background: rgba(200, 235, 210, 0.96);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.22);
 }
 
 /* ANTRAŠTĖS */
 h1, h2, h3 {
-    color: #102810 !important;
+    color: #173117 !important;
     text-align: center;
-    text-shadow: 0 1px1px
-    rgba(255,255,255,0.6);
+    text-shadow: none !important;
+    font-weight: 700;
 }
+
 /* VISAS TEKSTAS */
-html, body, p, label, span, div, li {
+html, body, p, label, span, li {
     color: #102810 !important;
     font-weight: 500;
 }
@@ -55,15 +56,15 @@ html, body, p, label, span, div, li {
 /* INPUT */
 .stTextInput input,
 .stTextArea textarea {
-    background:rgba(255,255,255,0.96) !important;
+    background:rgba(255,255,255,0.98) !important;
     color: #102810 !important;
-    border: 1px solid #b7b7b7 !important;
+    border: 1px solid #a9c9a9 !important;
     border-radius: 14px !important;
 }
 
 /* SELECT */
 div[data-baseweb="select"] > div {
-    background:rgba(255,255,255,0.96) !important;
+    background:rgba(255,255,255,0.98) !important;
     color: #102810 !important;
     border-radius: 14px !important;
 }
