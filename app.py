@@ -24,23 +24,25 @@ st.markdown("""
 
 /* Pagrindinis turinio blokas - štai čia svarbiausia */
 .main .block-container {
-    max-width: 1050px;
+    background: rgba(200, 240, 210, 0.92);
+    border-radius: 28px;
+    padding: 2rem 2rem 3rem 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    padding: 2rem 2rem 3rem 2rem;
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.94);
     box-shadow: 0 12px 32px rgba(0,0,0,0.18);
 }
 
 /* Tekstas */
 h1, h2, h3 {
-    color: #1f3b1f !important;
+    color: #153015 !important;
     text-align: center;
+    text-shadow: 0 1px1px
+    rgba(255,255,255,0.5);
 }
 
 p, label, span, div {
-    color: #243424;
+    color: #1b2a1b ! important;
+    font-weight: 500;
 }
 
 /* Mygtukai */
