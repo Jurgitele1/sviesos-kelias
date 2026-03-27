@@ -26,9 +26,14 @@ st.markdown("""
 
 /* Antraštės */
 h1, h2, h3 {
-    color: #2e7d32;
+    color: #1b3d1b ! important;
+    text-shadow: 0 1px2px
+    rgba(255,255,255,0.6);
 }
 
+p, label, div {
+    color: #1f2d1f !important;
+}
 h1 {
     text-align: center;
     font-size: 2.5rem !important;
