@@ -71,6 +71,7 @@ if not os.path.exists(IMAGE_FOLDER):
 all_images = [
     f for f in os.listdir(IMAGE_FOLDER)
     if f.lower().endswith((".png", ".jpg", ".jpeg", ".webp"))
+and f.lower() not in ["fonas.jpg"]
 ]
 
 if not all_images:
