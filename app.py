@@ -23,8 +23,8 @@ st.markdown("""
     margin-bottom: 2rem;
     padding: 2rem 2rem 3rem 2rem;
     border-radius: 28px;
-    background: rgba(200, 235, 210, 0.96);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+    background:#d8f3dc; /* ŠVIESI MĖTINĖ */
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
 }
 
 /* ANTRAŠTĖS */
