@@ -5,7 +5,6 @@ import streamlit as st
 
 st.markdown("""
 <style>
-/* Bendras fonas */
 .stApp {
     background-image: url("https://raw.githubusercontent.com/JURGITELE1/sviesos-kelias/main/images/fonas.jpg");
     background-size: cover;
@@ -13,49 +12,34 @@ st.markdown("""
     background-attachment: fixed;
 }
 
-/* Pagrindinis baltas permatomas sluoksnis */
+/* Pagrindinis baltas sluoksnis */
 .main .block-container {
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(6px);
-    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 28px;
     padding: 2rem 2rem 3rem 2rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
 }
 
 /* Antraštės */
 h1, h2, h3 {
-    color: #1b3d1b ! important;
-    text-shadow: 0 1px2px
-    rgba(255,255,255,0.6);
+    color: #1f3b1f !important;
+    text-align: center;
+    text-shadow: none !important;
 }
 
-p, label, div {
+/* Paprastas tekstas */
+p, label, span {
     color: #1f2d1f !important;
-}
-h1 {
-    text-align: center;
-    font-size: 2.5rem !important;
-    margin-bottom: 0.2rem;
-}
-
-h2, h3 {
-    text-align: center;
-}
-
-/* Pastraipos ir tekstas */
-html, body, [class*="css"] {
-    color: #1f2d1f;
 }
 
 /* Mygtukai */
 .stButton > button {
-    width: 100%;
+    background: linear-gradient(90deg, #C7F464, #FDE68A);
+    color: #1f2d1f !important;
     border: none;
     border-radius: 16px;
-    background: linear-gradient(90deg, #c7f464, #fde68a);
-    color: #223322;
     font-weight: 700;
     padding: 0.7rem 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.10);
@@ -63,32 +47,38 @@ html, body, [class*="css"] {
 
 .stButton > button:hover {
     background: linear-gradient(90deg, #b6ea4e, #f8d95a);
-    color: #1d2b1d;
 }
 
-/* Input laukai */
+/* Įvesties laukai */
 .stTextInput input,
 .stTextArea textarea {
-    border-radius: 16px !important;
-    border: 1px solid rgba(120, 170, 90, 0.35) !important;
-    background-color: rgba(255,255,255,0.92) !important;
+    background: #ffffff !important;
+    color: #1f2d1f !important;
+    border: 1px solid #cddc9a !important;
+    border-radius: 14px !important;
 }
 
 /* Selectbox */
 div[data-baseweb="select"] > div {
-    border-radius: 16px !important;
-    background-color: rgba(255,255,255,0.92) !important;
+    background: #ffffff !important;
+    color: #1f2d1f !important;
+    border-radius: 14px !important;
 }
 
-/* Radio */
+/* Radio juosta */
 .stRadio > div {
-    background: rgba(255,255,255,0.55);
+    background: rgba(255,255,255,0.92);
     border-radius: 16px;
     padding: 0.6rem 1rem;
 }
 
-/* Info/success/warning blokai */
+/* Alert blokai */
 div[data-testid="stAlert"] {
+    border-radius: 16px;
+}
+
+/* Paveikslėliai */
+img {
     border-radius: 18px;
 }
 
@@ -96,21 +86,8 @@ div[data-testid="stAlert"] {
 hr {
     border: none;
     height: 1px;
-    background: rgba(46, 125, 50, 0.18);
-    margin-top: 1.4rem;
-    margin-bottom: 1.4rem;
-}
-
-/* Paveikslėliams švelnus rėmelis */
-img {
-    border-radius: 18px;
-}
-
-/* Maži caption */
-[data-testid="stCaptionContainer"] {
-    text-align: center;
-    color: #456045;
-    font-weight: 500;
+    background: rgba(46,125,50,0.18);
+    margin: 1.2rem 0;
 }
 </style>
 """, unsafe_allow_html=True)
