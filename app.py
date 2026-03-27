@@ -13,35 +13,30 @@ st.markdown("""
     background-attachment: fixed;
 }
 
-/* Nuimame papildomus fonus */
 [data-testid="stHeader"] {
-    background: rgba(0,0,0,0);
+    background: transparent;
 }
 
-[data-testid="stToolbar"] {
-    right: 1rem;
-}
-
-/* Pagrindinis turinio blokas - štai čia svarbiausia */
 .main .block-container {
-    background: rgba(200, 240, 210, 0.92);
+    background: rgba(210, 240, 220, 0.93);
     border-radius: 28px;
     padding: 2rem 2rem 3rem 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
     box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    max-width: 1050px;
 }
 
-/* Tekstas */
+/* ANTRAŠTĖS */
 h1, h2, h3 {
-    color: #153015 !important;
+    color: #102810 !important;
     text-align: center;
     text-shadow: 0 1px1px
-    rgba(255,255,255,0.5);
+    rgba(255,255,255,0.6);
 }
-
-p, label, span, div {
-    color: #1b2a1b ! important;
+/* VISAS TEKSTAS */
+html, body, p, label, span, div, li {
+    color: #102810 !important;
     font-weight: 500;
 }
 
@@ -51,58 +46,47 @@ p, label, span, div {
     border: none;
     border-radius: 16px;
     background: linear-gradient(90deg, #c7f464, #fde68a);
-    color: #243424 !important;
+    color: #102810 !important;
     font-weight: 700;
     padding: 0.75rem 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.10);
 }
 
-.stButton > button:hover {
-    background: linear-gradient(90deg, #b6ea4e, #f8d95a);
-}
-
-/* Įvesties laukai */
+/* INPUT */
 .stTextInput input,
 .stTextArea textarea {
-    background: #ffffff !important;
-    color: #243424 !important;
-    border: 1px solid #d6dfb4 !important;
+    background:rgba(255,255,255,0.96) !important;
+    color: #102810 !important;
+    border: 1px solid #b7b7b7 !important;
     border-radius: 14px !important;
 }
 
-/* Selectbox */
+/* SELECT */
 div[data-baseweb="select"] > div {
-    background: #ffffff !important;
-    color: #243424 !important;
+    background:rgba(255,255,255,0.96) !important;
+    color: #102810 !important;
     border-radius: 14px !important;
 }
 
-/* Radio pasirinkimai */
+/* RADIO */
 .stRadio > div {
-    background: rgba(255,255,255,0.92);
+    background: rgba(255,255,255,0.88);
     border-radius: 16px;
     padding: 0.5rem 0.8rem;
 }
 
-/* Info blokai */
+/* ALERT */
 div[data-testid="stAlert"] {
     border-radius: 16px;
 }
 
-/* Paveikslai */
+/* IMAGE */
 img {
     border-radius: 18px;
 }
-
-/* Linija */
-hr {
-    border: none;
-    height: 1px;
-    background: rgba(46,125,50,0.18);
-    margin: 1.2rem 0;
-}
 </style>
-""", unsafe_allow_html=True)
+""",
+            unsafe_allow_html=True)
 
 st.set_page_config(page_title="Šviesos kelias", page_icon="✨")
 
