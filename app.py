@@ -5,43 +5,53 @@ import streamlit as st
 
 st.markdown("""
 <style>
-.stApp {
+/* Visas puslapio fonas */
+[data-testid="stAppViewContainer"] {
     background-image: url("https://raw.githubusercontent.com/JURGITELE1/sviesos-kelias/main/images/fonas.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-/* Pagrindinis baltas sluoksnis */
-.main .block-container {
-    background: rgba(255, 255, 255, 0.96);
-    border-radius: 28px;
-    padding: 2rem 2rem 3rem 2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+/* Nuimame papildomus fonus */
+[data-testid="stHeader"] {
+    background: rgba(0,0,0,0);
 }
 
-/* Antraštės */
+[data-testid="stToolbar"] {
+    right: 1rem;
+}
+
+/* Pagrindinis turinio blokas - štai čia svarbiausia */
+.main .block-container {
+    max-width: 1050px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem 2rem 3rem 2rem;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+}
+
+/* Tekstas */
 h1, h2, h3 {
     color: #1f3b1f !important;
     text-align: center;
-    text-shadow: none !important;
 }
 
-/* Paprastas tekstas */
-p, label, span {
-    color: #1f2d1f !important;
+p, label, span, div {
+    color: #243424;
 }
 
 /* Mygtukai */
 .stButton > button {
-    background: linear-gradient(90deg, #C7F464, #FDE68A);
-    color: #1f2d1f !important;
+    width: 100%;
     border: none;
     border-radius: 16px;
+    background: linear-gradient(90deg, #c7f464, #fde68a);
+    color: #243424 !important;
     font-weight: 700;
-    padding: 0.7rem 1rem;
+    padding: 0.75rem 1rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.10);
 }
 
@@ -53,36 +63,36 @@ p, label, span {
 .stTextInput input,
 .stTextArea textarea {
     background: #ffffff !important;
-    color: #1f2d1f !important;
-    border: 1px solid #cddc9a !important;
+    color: #243424 !important;
+    border: 1px solid #d6dfb4 !important;
     border-radius: 14px !important;
 }
 
 /* Selectbox */
 div[data-baseweb="select"] > div {
     background: #ffffff !important;
-    color: #1f2d1f !important;
+    color: #243424 !important;
     border-radius: 14px !important;
 }
 
-/* Radio juosta */
+/* Radio pasirinkimai */
 .stRadio > div {
     background: rgba(255,255,255,0.92);
     border-radius: 16px;
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 0.8rem;
 }
 
-/* Alert blokai */
+/* Info blokai */
 div[data-testid="stAlert"] {
     border-radius: 16px;
 }
 
-/* Paveikslėliai */
+/* Paveikslai */
 img {
     border-radius: 18px;
 }
 
-/* Horizontal line */
+/* Linija */
 hr {
     border: none;
     height: 1px;
@@ -91,6 +101,7 @@ hr {
 }
 </style>
 """, unsafe_allow_html=True)
+
 st.set_page_config(page_title="Šviesos kelias", page_icon="✨")
 
 CSV_FILE = "steps.csv"
